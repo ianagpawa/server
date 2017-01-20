@@ -37,11 +37,31 @@ As root user, execute the following command:
 sudo adduser grader
 ```
 Password provided in the reviewer notes.
-Then, use command `sudo visudo` view file `/etc/sudoers.tmp` and all the `grader` line under root:
+Then, use command `sudo visudo` to view file `/etc/sudoers.tmp` and add the `grader` line under root:
 
 ```
 # User privilege specification
 root    ALL=(ALL:ALL) ALL
 grader  ALL=(ALL:ALL) ALL
 
+```
+
+To confirm user, install `finger` with:
+```
+sudo apt-get install finger
+```
+Then use command `finger` to display users.
+
+## Switching users
+In a separate terminal, use command the following command to ssh into the instance as `grader`:
+
+```
+ssh grader@35.165.176.122 -p 2222
+```
+
+## Update Installed Packages
+As `grader`, execute the following commands:
+```
+sudo apt-get update
+sudo apt-get upgrade
 ```
