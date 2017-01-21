@@ -13,7 +13,7 @@ Open your ~/.ssh/udacity_key.rsa file in a text editor and copy the contents of 
 During the submission process, paste the contents of the udacity_key.rsa file into the "Notes to Reviewer" field.
 # Linux Server Configuration
 ### By Ian Agpawa
-##### This repo is for my Linux server configuration project from Udacity's Full Stack Web Developer Nanodegree course.  The   
+##### This repo is for my Linux server configuration project from Udacity's Full Stack Web Developer Nanodegree course.  The project used is my item catalog project from the same course.  The git repo of that project is located here: `https://github.com/ianagpawa/catalog.git`   
 
 
 ### Quick Start
@@ -21,8 +21,10 @@ During the submission process, paste the contents of the udacity_key.rsa file in
 
 ## Address and Port
 
-####IP ADDRESS: `35.165.176.112`
-####SSH Port:   `2200`
+####IP ADDRESS:
+`35.165.176.112`
+####SSH Port:   
+`2200`
 
 ## Complete URL
 ```
