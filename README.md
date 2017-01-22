@@ -23,11 +23,10 @@ During the submission process, paste the contents of the udacity_key.rsa file in
 ####SSH Port:   
 `2200`
 
-## Complete URL
+### Complete URL
 ```
 http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
 ```
-
 
 ## Installed software and configuration changes
 
@@ -64,7 +63,6 @@ Port 2200
 # Authentication:
 LoginGraceTime 120
 PermitRootLogin no
-
 ```
 ```
 # Change to no to disable tunnelled clear text passwords
@@ -106,10 +104,10 @@ engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
 
 
 ## Third-party resources
-[Digital Ocean - Deploy Flask App](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
-[Stack Overflow - make .git directory inaccessible ](http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible)
-[Ubuntu - Change timezone to UTC](http://askubuntu.com/questions/138423/how-do-i-change-my-timezone-to-utc-gmt)
-[Ubuntu - Configure UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
+..*[Digital Ocean - Deploy Flask App](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+..*[Stack Overflow - make .git directory inaccessible ](http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible)
+..*[Ubuntu - Change timezone to UTC](http://askubuntu.com/questions/138423/how-do-i-change-my-timezone-to-utc-gmt)
+..*[Ubuntu - Configure UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
 
 
 ## Creator
