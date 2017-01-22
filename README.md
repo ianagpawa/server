@@ -104,10 +104,13 @@ engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
 
 
 ## Third-party resources
-..*[Digital Ocean - Deploy Flask App](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
-..*[Stack Overflow - make .git directory inaccessible ](http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible)
-..*[Ubuntu - Change timezone to UTC](http://askubuntu.com/questions/138423/how-do-i-change-my-timezone-to-utc-gmt)
-..*[Ubuntu - Configure UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
+* [Digital Ocean - Deploy Flask App](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+
+* [Stack Overflow - make .git directory inaccessible ](http://stackoverflow.com/questions/6142437/make-git-directory-web-inaccessible)
+
+* [Ubuntu - Change timezone to UTC](http://askubuntu.com/questions/138423/how-do-i-change-my-timezone-to-utc-gmt)
+
+* [Ubuntu - Configure UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
 
 
 ## Creator
