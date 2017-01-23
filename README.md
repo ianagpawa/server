@@ -38,24 +38,24 @@ http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
 ####Configuration changes
 1. Add user `grader` and grant sudo permissions:
     * Create file `/etc/sudoers.d/grader` and add the following line:
-```
-grader ALL=(ALL:ALL) ALL
-```
+    ```
+    grader ALL=(ALL:ALL) ALL
+    ```
 2. Modify file `/etc/ssh/sshd_config` to only allow SSH (only via port 2200) and deny root access:
-    * ```
+     ```
     # What ports, IPs and protocols we listen for
     Port 2200
     ```
-    * ```
+     ```
     # Authentication:
     LoginGraceTime 120
     PermitRootLogin no
     ```
-    * ```
+     ```
     # Change to no to disable tunnelled clear text passwords
     PasswordAuthentication no
     ```
-    * ```
+    ```
     UsePAM yes
     AllowUsers grader
     ```
@@ -75,7 +75,6 @@ grader ALL=(ALL:ALL) ALL
     * `Alias /static /var/www/catalog/catalog/static`
     * `<Directory /var/www/catalog/catalog/static/>`
 
-
 6. Modified `/var/www/catalog/catalog.wsgi` with the following lines:
     * `sys.path.insert(0,"/var/www/catalog/")`
     * `from catalog import app as application`
@@ -87,9 +86,10 @@ grader ALL=(ALL:ALL) ALL
     * Create User `catalog` and grant permission to database
 
 9. Modified the following line in `main.py`, `db_setup.py`, and `loadsongs.py`, where `PASSWORD` is replaced by the password for PostgreSQL user `catalog`:
-```
-engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
-```
+    ```
+    engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
+    ```
+
 10. File `main.py` was renamed to `__init__.py`.
 
 
