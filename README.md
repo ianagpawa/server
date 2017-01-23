@@ -37,28 +37,28 @@ http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
 
 ####Configuration changes
 1. Add user `grader` and grant sudo permissions:
-..* Create file `/etc/sudoers.d/grader` and add the following line:
+    * Create file `/etc/sudoers.d/grader` and add the following line:
 ```
 grader ALL=(ALL:ALL) ALL
 ```
 2. Modify file `/etc/ssh/sshd_config` to only allow SSH (only via port 2200) and deny root access:
-```
-# What ports, IPs and protocols we listen for
-Port 2200
-```
-```
-# Authentication:
-LoginGraceTime 120
-PermitRootLogin no
-```
-```
-# Change to no to disable tunnelled clear text passwords
-PasswordAuthentication no
-```
-```
-UsePAM yes
-AllowUsers grader
-```
+    * ```
+    # What ports, IPs and protocols we listen for
+    Port 2200
+    ```
+    * ```
+    # Authentication:
+    LoginGraceTime 120
+    PermitRootLogin no
+    ```
+    * ```
+    # Change to no to disable tunnelled clear text passwords
+    PasswordAuthentication no
+    ```
+    * ```
+    UsePAM yes
+    AllowUsers grader
+    ```
 
 3. Configured UFW to only allow SSH (port 2200), HTTP (port 80), and NTP (port 123)
 
@@ -66,19 +66,19 @@ AllowUsers grader
 
 5. Configured and enabled new virtual host.  The following changes were made to `/etc/apache2/sites-available/catalog.conf `:
 
-```
-ServerName 35.165.176.112
-ServerAlias ec2-35-165-176-112.us-west-2.compute.amazonaws.com
-ServerAdmin grader@35.165.176.112
-WSGIScriptAlias / /var/www/catalog/catalog.wsgi
-<Directory /var/www/catalog/catalog/>
-Alias /static /var/www/catalog/catalog/static
-<Directory /var/www/catalog/catalog/static/>
-```
+
+    * `ServerName 35.165.176.112`
+    * `ServerAlias ec2-35-165-176-112.us-west-2.compute.amazonaws.com`
+    * `ServerAdmin grader@35.165.176.112`
+    * `WSGIScriptAlias / /var/www/catalog/catalog.wsgi`
+    * `<Directory /var/www/catalog/catalog/>`
+    * `Alias /static /var/www/catalog/catalog/static`
+    * `<Directory /var/www/catalog/catalog/static/>`
+
 
 6. Modified `/var/www/catalog/catalog.wsgi` with the following lines:
-    1. `sys.path.insert(0,"/var/www/catalog/")`
-    2. `from catalog import app as application`
+    * `sys.path.insert(0,"/var/www/catalog/")`
+    * `from catalog import app as application`
 
 7. Confirm PostgreSQL (file: `/etc/postgresql/9.3/main/pg_hba.conf`) does not allow remote connections (default settings).
 
