@@ -1,16 +1,3 @@
-Create a new GitHub repository and add a file named README.md.
-Your README.md file should include all of the following:
-
-i. The IP address and SSH port so your server can be accessed by the reviewer.
-
-ii. The complete URL to your hosted web application.
-
-iii. A summary of software you installed and configuration changes made.
-
-iv. A list of any third-party resources you made use of to complete this project.
-
-Open your ~/.ssh/udacity_key.rsa file in a text editor and copy the contents of that file.
-During the submission process, paste the contents of the udacity_key.rsa file into the "Notes to Reviewer" field.
 # Linux Server Configuration
 ### By Ian Agpawa
 ##### This repo is for my Linux server configuration project from Udacity's Full Stack Web Developer Nanodegree course.  The project used is my item catalog project from the same course.  The git repo of that project is located here: `https://github.com/ianagpawa/catalog.git`   
@@ -50,10 +37,10 @@ http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
 
 ####Configuration changes
 1. Add user `grader` and grant sudo permissions:
-    -Create file `/etc/sudoers.d/grader` and add the following line:
-    ```
-    grader ALL=(ALL:ALL) ALL
-    ```
+* Create file `/etc/sudoers.d/grader` and add the following line:
+```
+grader ALL=(ALL:ALL) ALL
+```
 2. Modify file `/etc/ssh/sshd_config` to only allow SSH (only via port 2200) and deny root access:
 ```
 # What ports, IPs and protocols we listen for
@@ -77,7 +64,8 @@ AllowUsers grader
 
 4. Changed local timezone to UTC
 
-5. Configured and enabled new virtual host.  The following changes were made to `/etc/apache2/sites-available/catalog.conf `
+5. Configured and enabled new virtual host.  The following changes were made to `/etc/apache2/sites-available/catalog.conf `:
+
 ```
 ServerName 35.165.176.112
 ServerAlias ec2-35-165-176-112.us-west-2.compute.amazonaws.com
@@ -87,20 +75,22 @@ WSGIScriptAlias / /var/www/catalog/catalog.wsgi
 Alias /static /var/www/catalog/catalog/static
 <Directory /var/www/catalog/catalog/static/>
 ```
+
 6. Modified `/var/www/catalog/catalog.wsgi` with the following lines:
-`sys.path.insert(0,"/var/www/catalog/")`
-`from catalog import app as application`
+* `sys.path.insert(0,"/var/www/catalog/")`
+* `from catalog import app as application`
 
 7. Confirm PostgreSQL (file: `/etc/postgresql/9.3/main/pg_hba.conf`) does not allow remote connections (default settings).
 
 8. Configure PostgreSQL:
--Create Database `catalog`
--Create User `catalog` and grant permission to database
+* Create Database `catalog`
+* Create User `catalog` and grant permission to database
 
 9. Modified the following line in `main.py`, `db_setup.py`, and `loadsongs.py`, where `PASSWORD` is replaced by the password for PostgreSQL user `catalog`:
 ```
 engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
 ```
+10. File `main.py` was renamed to `__init__.py`.
 
 
 ## Third-party resources
@@ -119,4 +109,4 @@ engine = create_engine('postgresql://catalog:PASSWORD@localhost/catalog')
 
 [Github](https://github.com/ianagpawa)
 
- agpawaji@gmail.com
+agpawaji@gmail.com
