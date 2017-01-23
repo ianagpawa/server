@@ -37,7 +37,7 @@ http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
 
 ####Configuration changes
 1. Add user `grader` and grant sudo permissions:
-* Create file `/etc/sudoers.d/grader` and add the following line:
+..* Create file `/etc/sudoers.d/grader` and add the following line:
 ```
 grader ALL=(ALL:ALL) ALL
 ```
@@ -77,14 +77,14 @@ Alias /static /var/www/catalog/catalog/static
 ```
 
 6. Modified `/var/www/catalog/catalog.wsgi` with the following lines:
-* `sys.path.insert(0,"/var/www/catalog/")`
-* `from catalog import app as application`
+..* `sys.path.insert(0,"/var/www/catalog/")`
+..* `from catalog import app as application`
 
 7. Confirm PostgreSQL (file: `/etc/postgresql/9.3/main/pg_hba.conf`) does not allow remote connections (default settings).
 
 8. Configure PostgreSQL:
-* Create Database `catalog`
-* Create User `catalog` and grant permission to database
+..* Create Database `catalog`
+..* Create User `catalog` and grant permission to database
 
 9. Modified the following line in `main.py`, `db_setup.py`, and `loadsongs.py`, where `PASSWORD` is replaced by the password for PostgreSQL user `catalog`:
 ```
