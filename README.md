@@ -1,23 +1,23 @@
 # Linux Server Configuration
 ### By Ian Agpawa
-##### This repo is for my Linux server configuration project from Udacity's Full Stack Web Developer Nanodegree course.  The project used is my item catalog project from the same course.  The git repo of that project is located here: `https://github.com/ianagpawa/catalog.git`   
+##### This repo is for my Linux server configuration project from Udacity's Full Stack Web Developer Nanodegree course.  The project used is my item catalog project from the same course.  The git repo of that project is located here:
 
 
 ## Address and Port
 
-####IP ADDRESS:
+#### IP ADDRESS:
 `35.165.176.112`
-####SSH Port:   
+#### SSH Port:   
 `2200`
 
 ### Complete URL
 ```
-http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
+http://ec2-107-23-78-53.compute-1.amazonaws.com/
 ```
 
 ## Installed software and configuration changes
 
-####Software Installed:
+#### Software Installed:
 `finger`
 `apache2`
 `libapache2-mod-wsgi`
@@ -35,7 +35,7 @@ http://ec2-35-165-176-112.us-west-2.compute.amazonaws.com
 `httplib2`
 `flask-seasurf`
 
-####Configuration changes
+#### Configuration changes
 1. Add user `grader` and grant sudo permissions:
     * Create file `/etc/sudoers.d/grader` and add the following line:
     ```
